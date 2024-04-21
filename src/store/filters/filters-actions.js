@@ -1,4 +1,4 @@
-import { ADD_FILTER, DEL_FILTER } from "./filters-constants";
+import { ADD_FILTER, DEL_FILTER, RST_FILTER } from "./filters-constants";
 
 export function addFilter(filter) {
   return {
@@ -20,7 +20,7 @@ export function delFilter(filter) {
 
 export function rstFilter() {
   return {
-    type: DEL_FILTER,
+    type: RST_FILTER,
     payload: {},
   };
 }
