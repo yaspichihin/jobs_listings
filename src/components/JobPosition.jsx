@@ -17,6 +17,7 @@ export function JobPosition({
   location,
   languages,
   tools,
+  handleAddFilter,
 }) {
   const bages = [].concat(role, level, ...languages, ...tools);
 
@@ -53,7 +54,9 @@ export function JobPosition({
         </div>
         <Stack>
           {bages.map((item) => (
-            <Badge key={item}>{item}</Badge>
+            <Badge onClick={() => handleAddFilter(item)} key={item}>
+              {item}
+            </Badge>
           ))}
         </Stack>
       </div>
@@ -75,4 +78,5 @@ JobPosition.propTypes = {
   location: PropTypes.string,
   languages: PropTypes.arrayOf(PropTypes.string),
   tools: PropTypes.arrayOf(PropTypes.string),
+  handleAddFilter: PropTypes.func,
 };
