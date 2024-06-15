@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import { Badge } from "../ui/Badge";
-import { Card } from "../ui/Card";
-import { Stack } from "../ui/Stack";
+import { Badge } from "../../ui/Badge";
+import { Card } from "../../ui/Card";
+import { Stack } from "../../ui/Stack";
 
 export function JobPosition({
   id,
@@ -13,13 +13,13 @@ export function JobPosition({
   role,
   level,
   postedAt,
-  conrtact,
+  contract,
   location,
   languages,
   tools,
   handleAddFilter,
 }) {
-  const bages = [].concat(role, level, ...languages, ...tools);
+  const badges = [].concat(role, level, ...languages, ...tools);
 
   return (
     <Card isFeatured={featured}>
@@ -47,13 +47,13 @@ export function JobPosition({
             <h2 className="job-position-title">{position}</h2>
             <Stack>
               <div className="job-position-meta">{postedAt}</div>
-              <div className="job-position-meta">{conrtact}</div>
+              <div className="job-position-meta">{contract}</div>
               <div className="job-position-meta">{location}</div>
             </Stack>
           </div>
         </div>
         <Stack>
-          {bages.map((item) => (
+          {badges.map((item) => (
             <Badge onClick={() => handleAddFilter(item)} key={item}>
               {item}
             </Badge>
@@ -74,7 +74,7 @@ JobPosition.propTypes = {
   role: PropTypes.string,
   level: PropTypes.string,
   postedAt: PropTypes.string,
-  conrtact: PropTypes.string,
+  contract: PropTypes.string,
   location: PropTypes.string,
   languages: PropTypes.arrayOf(PropTypes.string),
   tools: PropTypes.arrayOf(PropTypes.string),

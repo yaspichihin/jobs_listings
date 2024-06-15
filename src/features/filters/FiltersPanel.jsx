@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { Badge } from "../ui/Badge";
-import { Card } from "../ui/Card";
-import { Stack } from "../ui/Stack";
-import { selectFilters } from "../store/filters/filters-selectors";
-import { delFilter, rstFilter } from "../store/filters/filters-actions";
+import { Badge } from "../../ui/Badge";
+import { Card } from "../../ui/Card";
+import { Stack } from "../../ui/Stack";
+import { delFilter, rstFilters, selectFilters } from "./filters-slice";
 
-export function FiterPanel() {
+export function FiltersPanel() {
   const dispatch = useDispatch();
   const currentFilters = useSelector(selectFilters);
 
@@ -22,7 +21,7 @@ export function FiterPanel() {
             </Badge>
           ))}
         </Stack>
-        <button onClick={() => dispatch(rstFilter())} className="link">
+        <button onClick={() => dispatch(rstFilters())} className="link">
           Clear
         </button>
       </div>
